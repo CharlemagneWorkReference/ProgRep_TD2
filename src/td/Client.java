@@ -1,3 +1,5 @@
+package td;
+
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -32,7 +34,7 @@ public class Client {
           ServiceMultiplication sMul = (ServiceMultiplication) annuaire.lookup("Multiplicateur");
           ServiceTrigo sTrig = (ServiceTrigo)annuaire.lookup("Trigo");
 
-          //ServiceTrigo sTrig = (ServiceTrigo)annuaire.lookup("Trigo");
+          //td.ServiceTrigo sTrig = (td.ServiceTrigo)annuaire.lookup("Trigo");
 
     /* faire un calcul ( ( a * ( b + c ) ) - ( d * ( e + f ) ) ) / g */
           double a=100000, b=2000000, c=3000000, d=4000000, e=50000000, f=6000000, g=70000000;

@@ -1,3 +1,5 @@
+package td;
+
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -14,7 +16,9 @@ public class LancerServeur {
         ServeurCalculDiv serveurCalculDiv = new ServeurCalculDiv();
         ServeurTrigo serveurTrigo = new ServeurTrigo();
         try{
+            LocateRegistry.createRegistry(1099);
             Registry reg = LocateRegistry.getRegistry();
+
             ServiceAddition serviceAddition = (ServiceAddition)UnicastRemoteObject.exportObject(serveurCalcul,0);
             ServiceSoustraction serviceSoustraction = (ServiceSoustraction)UnicastRemoteObject.exportObject(serveurCalculSous,0);
             ServiceMultiplication serviceMultiplication = (ServiceMultiplication)UnicastRemoteObject.exportObject(serveurCalculMult,0);
